@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/yacht-adventures/assets/favicon-9fed56f2.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A website, providing a selection of yachts from a wide range for rent" />
+    <title>Yacht Adventures</title>
+    
+    <script type="module" crossorigin src="/yacht-adventures/assets/index-c647b915.js"></script>
+    <link rel="stylesheet" href="/yacht-adventures/assets/index-c0f12e06.css">
+  </head>
+  <body>
+    <header>
+      <div class="container header">
+  <div class="header-underline">
+    <a href="/src/index.html" class="header-icon">
+      <img
+        class="logo-icon"
+        srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKESURBVHgBpVRNblMxEJ7xq2grISU9QcMJKHukpEIsYEN7AGh6guYGCSdob5Ad24gFqiAEk7SkHCNHeMuotWeYsd97eUlL81MrVmy/8Tefv/lsgA3aN2sPVokzsEFjhJOetdVlcRuBA8NekvDLZWFrg1+ObJN0QNhZFrsW+Pc/w7ZBs29QlYH6MmlWBu9f2YbI0XFESAzSBZ+o9WRwa20NE9MF5rCh2IRYfzK43zYdQdrP5yRHCI250ev3GxuDD65HTYN4ApFptoqxy9wjHm0ErnKA4XYkyTj/lXVRk5x0/1PYx5nvbHUFsSYMOUsgO4yiwuwMWHnu3MFa4Pbmqs3AjSBFmbW4RZMxxBQcXIntlcHtja3JprYyRQEPjJWljCkeASPr2CSq0e3dl+ZBcIbEQla+AJwXMkvCRdxstLvrmkvB7Xh0DqpzCaRw3kIsqjySUHOygQ+Pgv8cj47kwMWtM6F49xuWMiFGCCZofPnxq/4guNpO3oxzzJwRNuTa4jxpnnWhTlkSmTt3XI7bKkY7UGPkrwimImWrRe+BFqkqBYvzkLiUJ6tH8BOxDj7JanFyHIyHLQUxTJOwksAEXEg7kYTp4avDNA++FBdNp5A+k5rcEh2IbhV5yKr+zu/Jq1PxzLW7qTs9PX4XsFDkqNJ20hUCc9c4t2HUk1MvXQRIiSAVkNR7Sj3AhMT3zGbinKwhp0rMOSfg07S4HIPr4QUmeFbyNed+1plnvT8MkgTkt/A/WyfdJfvo1r8oCvrmdb0l65/zCxMULtyCmqUsdjGIxcbiLkQTYEelWXiMxDV/h2fy/SJ4OF71wFhEYmGHXll6Cjc1nkRPxWFM8S37/fH920PF+ge5cW0AbYYzqgAAAABJRU5ErkJggg== 1x, data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAZsSURBVHgBvVndbhtVEJ5ZuzSCi7hvYHgBwmWvYgtRVIpUco1EnCegPEHMCyDEC6QVF72MQEIRRMkqTavAFbwBzhPUuUAQ6j3TOWfOnJ21Eye21x4l3r+ze76Z8803szbAiuyXPN/Yz/MW1GQZrMgcQOtOBo+hJlsZcDHsQU22YuDUqYsuKwYO0AR4AjXYqqni/7ahBls68IPTvJMOiPxnm+nSgQVtqcAP8ryNgLvpBIZPasDi6rJU4NjEPY5x25zyIUcC6i2apEsD/uurk11E6KDHqUYh5v64lS0Y9aUAzz1FCPrCDcJ0gT0h/4no2d6DBWwpwIu7WS6B1c/SgisceaLFNL124Ednp7vkqB0zcQw3Vdxxzs2t6bUCP2Tp40j2A2aM8Cx0vx8kUdiTIc7N89qAe15njWwvCoeCDHxOgzzFUfIzrsfGz8fHmzCH1RfxtYbX67ZGMxTJkIQmOc1Fips3hF/AHFYL8KOzF71SJYJukGcEf2B1JGr1NO653t4cSbow8PwsSN93HmmgRQIca42xOCbsyn8Y31onmpkuCwMnaO7z570IKPZRKTOrHAelPvmTWKrL7B3jQsBzlj6efANiFCmSl8hpZCfpUkbdXKPOrHSZG7inCK9z3wCSjOMIe2AUuTxZgQRrUEwsfXr3/9FMUZ8LeP5n3iJo5JC4qoDCYdS7kjrW0NxDKVGZORnOxPP5Iv6vSp+Wmio0KmFfUTttaYqU8bkA0Hl+eNiBW9rMwIP0oSTTeOJZuaMJjshZMGqYlIgj7qOOM2j6TMBF+mhXJ60mniqcOlOtNfEgUgS0SwTnFYacUB7wq7392yXpTMALyvr8+LbR4xThWCqJQpkH6491Lu1fJZNeVt9bpw+hTuD5q9OvuSnarkzmHcgy86KQdJtAaVDJAEwLoUWqVBcpWG7k+lAXcN9A8YL20/QqaSJ7mHQ5AvKYIV5LsgiJXuoC2fNasHjbuQ1dbgWc1lj6EFoRm6Qg2XmTrBltNhSqOIyKGssESIEIh++s3azpNwLP/zhV6Usz+EkzE/USWdqSKiWOCaLNVb8oulYY88NfzRA2YRHggSKuQpFK8dDJ0g0lFZLcCfbSKLqD8RFBhRKtQN+mOz8eTNf0a4GH6rgWqqPBRZWCo6BxXAJjfUEsi0w6DdIOKMaQI/EZiKX+N3D6twDXR/yyYSmiSMt9RE1O/+6I1Tc0LUJSRtMtejZu1HFxJAZBR9H0bwGuBH70kqsjwRMTWpnYSh+U/XX4N4DlSHpzS+qU0LpuaJKSzDMFfGsaXSaAh+rYgN343UecCC2fKTljlEXxGLdC3pJR8rKdVYCaL2kMcdZTGQDYhWusOX6ie7874M37B+yAP16DZnsEI2iOoI2YrfMvC/eg4aUR1zmYbSkiGXeLjv+FWgIYwwrgWFMg60EiKVc0YJR6nWCbXtN3trrDCeA+wvAfDLvd6sWH4oC3Acxo3ulGEXS/5UYQnjvi59wBeOp/UiFfE/iVjcG1eBVa3Ku0hFXlIvp938c07l72ePf78Tnw+PcXj/kHmqc8cp0fdsE+D/mmgXTWOORzPDGd+8FZ4QZMriGPHXokvF4DXpJh96PJiMxqzw8O2rLXDFvHq+l4hbOCBl8++uSnCeD+I0SdXwxoXEWutxSgSGRPzNdMjQtHskIF0IDE+wGrDhQOzgsI0Zd/XuWth2lVZ7bEQHkV89/5YduAq4yZ5kTsU1gaSRtC4v14Pix7Eo7CSQ+TrkU68rm/+XZkRwd88sIhvuZcGPINF4XDMAYyGu48evBXBVQAT9k+D95AGKvVRDD2XoNmCxaIBRr7J3FCz/ku0IlCST+etiGh5X6ZSAJhUBCc9D5/0K3IoVcUvHRdvvyMxnDrC4Lp7ux3JMkdaWWlChptjv0Vpg4yVkntc6USYHpyfOGuIPDjz+lNsaOjrrSjs5N+5WeQWGyq3puWtoxWmI9pHSLsZKUkok6GFqTRRx/qcJ+jsdWB1CZDKey0s/3Zp8/87rUl/+P7m339+oEiTfRBqZJWqaMyjKm2oBmTpJvQdi/xnbPsd+JqYNTGtMAOflDQU4FH8N8SFt/Y1tU8tbpaeN3qle+mZHpwbXi9I1R9DkiuC11iKzFwo3/6E8Nust9e5hvNLL1MlIgqnWLsmwCk6UoJRnGLkQJKC9J7Yr8VEhFdDLGlTnE5+mBn6+HAYnoLDabmUv/xWC0AAAAASUVORK5CYII= 2x"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKESURBVHgBpVRNblMxEJ7xq2grISU9QcMJKHukpEIsYEN7AGh6guYGCSdob5Ad24gFqiAEk7SkHCNHeMuotWeYsd97eUlL81MrVmy/8Tefv/lsgA3aN2sPVokzsEFjhJOetdVlcRuBA8NekvDLZWFrg1+ObJN0QNhZFrsW+Pc/w7ZBs29QlYH6MmlWBu9f2YbI0XFESAzSBZ+o9WRwa20NE9MF5rCh2IRYfzK43zYdQdrP5yRHCI250ev3GxuDD65HTYN4ApFptoqxy9wjHm0ErnKA4XYkyTj/lXVRk5x0/1PYx5nvbHUFsSYMOUsgO4yiwuwMWHnu3MFa4Pbmqs3AjSBFmbW4RZMxxBQcXIntlcHtja3JprYyRQEPjJWljCkeASPr2CSq0e3dl+ZBcIbEQla+AJwXMkvCRdxstLvrmkvB7Xh0DqpzCaRw3kIsqjySUHOygQ+Pgv8cj47kwMWtM6F49xuWMiFGCCZofPnxq/4guNpO3oxzzJwRNuTa4jxpnnWhTlkSmTt3XI7bKkY7UGPkrwimImWrRe+BFqkqBYvzkLiUJ6tH8BOxDj7JanFyHIyHLQUxTJOwksAEXEg7kYTp4avDNA++FBdNp5A+k5rcEh2IbhV5yKr+zu/Jq1PxzLW7qTs9PX4XsFDkqNJ20hUCc9c4t2HUk1MvXQRIiSAVkNR7Sj3AhMT3zGbinKwhp0rMOSfg07S4HIPr4QUmeFbyNed+1plnvT8MkgTkt/A/WyfdJfvo1r8oCvrmdb0l65/zCxMULtyCmqUsdjGIxcbiLkQTYEelWXiMxDV/h2fy/SJ4OF71wFhEYmGHXll6Cjc1nkRPxWFM8S37/fH920PF+ge5cW0AbYYzqgAAAABJRU5ErkJggg=="
+        alt="icon logo little yacht"
+        width="18"
+        height="18"
+      />
+      <span class="logo-name">Yachts Adventures</span>
+    </a>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-element"><a href="#about-section" class="nav-link">About</a></li>
+        <li class="nav-element"><a href="#yachts-section" class="nav-link">Yachts</a></li>
+        <li class="nav-element"><a href="#review-section" class="nav-link">Reviews</a></li>
+      </ul>
+    </nav>
+    <button
+      class="menu-toggle js-open-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg class="burger-icon" width="24" height="24">
+        <use href="/yacht-adventures/assets/icons-8fa121da.svg#burger"></use>
+      </svg>
+    </button>
+  </div>
+</div>
+
+    </header>
+    <main> 
+      <!-- Hero Section. Valerii Zinkovskii -->
+<section class="hero">
+  <div class="container hero-box">
+    <div class="hero-ellipse-one"></div>
+    <div class="hero-ellipse-two"></div>
+    <div class="hero-ellipse-desktop"></div>
+
+    <div class="desktop-block">
+      <div class="hero-container">
+        <h1 class="hero-title">
+          Explore the High Seas with
+          <span class="accent-color">Our Luxury Yacht</span> Rentals
+        </h1>
+        <p class="hero-text">
+          Experience the freedom and luxury of yachting on the open seas. Choose
+          from our top-of-the-line yachts and embark on an unforgettable journey
+          surrounded by breathtaking views and state-of-the-art amenities.
+        </p>
+        <div class="hero-btn-container">
+          <button class="hero-btn" type="button">Get Started</button>
+          <a href="#services-section" class="hero-anchor">Explore</a>
+        </div>
+      </div>
+      <!-- Card -->
+      <div class="mask-group">
+        <div class="hero-conteiner-clients">
+          <ul class="hero-list-clients">
+            <li class="hero-icon-clients-1">
+              <img
+                class="hero-icon"
+                srcset="/yacht-adventures/assets/icon-clients-1@1x-04005642.png 1x, /yacht-adventures/assets/icon-clients-1@2x-fc546cbd.png 2x"
+                src="/yacht-adventures/assets/icon-clients-1@1x-04005642.png"
+                alt="men foto"
+                width="48"
+              />
+            </li>
+            <li class="hero-icon-clients-2">
+              <img
+                class="hero-icon"
+                srcset="/yacht-adventures/assets/icon-clients-2@1x-7546852c.png 1x, /yacht-adventures/assets/icon-clients-2@2x-7368c3a8.png 2x"
+                src="/yacht-adventures/assets/icon-clients-2@1x-7546852c.png"
+                alt="girl foto"
+                width="48"
+              />
+            </li>
+            <li class="hero-icon-clients-3">
+              <img
+                class="hero-icon"
+                srcset="/yacht-adventures/assets/icon-clients-3@1x-ac447ec6.png 1x, /yacht-adventures/assets/icon-clients-3@2x-4d9e21e8.png 2x"
+                src="/yacht-adventures/assets/icon-clients-3@1x-ac447ec6.png"
+                alt="men foto"
+                width="48"
+              />
+            </li>
+          </ul>
+
+          <p class="text-clients">Our Clients</p>
+        </div>
+        <img
+          class="hero-img-ceo"
+          srcset="/yacht-adventures/assets/Img-CEO@1x-6781afb4.webp 1x, /yacht-adventures/assets/Img-CEO@2x-a27865b8.webp 2x"
+          src="/yacht-adventures/assets/Img-CEO@1x-6781afb4.webp"
+          width="133"
+          alt="man yacht owner"
+        />
+        <img
+          class="hero-img-yaht"
+          srcset="/yacht-adventures/assets/hero-yaht@1x-b2a9f83e.webp 1x, /yacht-adventures/assets/hero-yaht@2x-10e26d62.webp 2x"
+          src="/yacht-adventures/assets/hero-yaht@1x-b2a9f83e.webp"
+          alt="yaht"
+        />
+        <div class="hero-price-container">
+          <p class="hero-price">&#36;12M</p>
+          <p class="hero-price-text">
+            Book now and make your dream yacht rental a reality
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="about" id="about-section">
+  <div class="container contabout-about">
+    <div class="about-yacht">
+      <p class="info-yacht">
+        <span class="italic-style">Yacht Adventures</span> fleet is here to take
+        you on the ultimate adventure. Each yacht is hand-picked for its
+        comfort, style, and performance.
+      </p>
+      <div class="about-yacht-detail info-pad">
+        <p class="info-yacht-detail">
+          From spacious decks to state-of-the-art technology, our yachts are
+          designed to provide the perfect blend of luxury and functionality.
+          Take a look at our selection below and choose the yacht that matches
+          your needs and preferences.
+        </p>
+        <p class="info-yacht-detail">
+          No matter which yacht you choose, our experienced crew will ensure
+          that your journey is smooth and enjoyable. Book now and get ready for
+          an unforgettable adventure on the high seas.
+        </p>
+      </div>
+    </div>
+    <div class="about-img">
+      <img
+        class="about-img1"
+        srcset="/yacht-adventures/assets/about1@1x-b61d63c2.webp 1x, /yacht-adventures/assets/about1@2x-4509a55a.webp 2x"
+        src="/yacht-adventures/assets/about1@1x-b61d63c2.webp"
+        alt="Yacht deck picture"
+      />
+      <img
+        class="about-img2"
+        srcset="/yacht-adventures/assets/about2@1x-75702d5b.webp 1x, /yacht-adventures/assets/about2@2x-f4313ea0.webp 2x"
+        src="/yacht-adventures/assets/about2@1x-75702d5b.webp"
+        alt="Yacht inside picture"
+      />
+      <img
+        class="about-img3"
+        srcset="/yacht-adventures/assets/about3@1x-c9b34b85.webp 1x, /yacht-adventures/assets/about3@2x-b0d1bb1c.webp 2x"
+        src="/yacht-adventures/assets/about3@1x-c9b34b85.webp"
+        alt="Yacht outside picture"
+      />
+    </div>
+  </div>
+</section>
+
+      <section class="section yahts-section" id="yachts-section">
+    <div class="container yahts-container">
+        <div class="yahts-title-container">
+
+            <h2 class="yaht-title" id="yachtblock">Choose your dream yacht and sail away into the sunset</h2>
+            <div class="yaht-elipce">
+            </div>
+            <div class="yaht-elipce-2">
+            </div>
+            <a href="#Yacht" class="yaht-btn-link">
+                <button href="#Yacht" class="yaht-btn">
+                    Yacht rental
+                </button>
+            </a>
+
+
+        </div>
+
+        <!-- ID ???? -->
+        <div class="yahts-block" id="Yacht">
+
+            <div class="yahts-list">
+
+                <div class="yahts-item yaht-1">
+                    <img class="yahts-img yahts-1-img"
+                        srcset="/yacht-adventures/assets/yaht-1-5e8421fd.webp , /yacht-adventures/assets/yaht-1@2x-a1940a0f.webp 2x"
+                        src="/yacht-adventures/assets/yaht-1-5e8421fd.webp" alt="ARROW" width="299" height="251">
+                    <div class="yahts-card-container">
+                        <div class="yahts-item-text">
+                            <p class="yahts-name">ARROW</p>
+                            <p class="yahts-class">LUXURY YAHTS</p>
+                        </div>
+                        <div class="yahts-item-about-block">
+                            <ul class="yahts-list-about-name">
+                                <li class="yahts-item-about-name">LENGTH</li>
+                                <li class="yahts-item-about-name">BUILDER</li>
+                                <li class="yahts-item-about-name">BUILT</li>
+                                <li class="yahts-item-about-name">GUESTS</li>
+                                <li class="yahts-item-about-name">PRICE</li>
+                            </ul>
+                            <ul class="yahts-list-about">
+                                <li class="yahts-item-about">48m(155ft)</li>
+                                <li class="yahts-item-about">Admiral</li>
+                                <li class="yahts-item-about">2021</li>
+                                <li class="yahts-item-about">11 in 5 cabins</li>
+                                <li class="yahts-item-about">€33,500,000</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="yahts-item yaht-2">
+                    <img class="yahts-img yahts-2-img"
+                        srcset="/yacht-adventures/assets/yaht-2-cfdf4adf.webp , /yacht-adventures/assets/yaht-2@2x-b944ae09.webp 2x"
+                        src="/yacht-adventures/assets/yaht-2-cfdf4adf.webp" alt="BENETTI OASIS 40M BO122" width="299" height="251">
+                    <div class="yahts-card-container">
+                        <div class="yahts-item-text">
+                            <p class="yahts-name">BENETTI OASIS 40M...</p>
+                            <p class="yahts-class">LUXURY YAHTS</p>
+                        </div>
+                        <div class="yahts-item-about-block">
+                            <ul class="yahts-list-about-name">
+                                <li class="yahts-item-about-name">LENGTH</li>
+                                <li class="yahts-item-about-name">BUILDER</li>
+                                <li class="yahts-item-about-name">BUILT</li>
+                                <li class="yahts-item-about-name">GUESTS</li>
+                                <li class="yahts-item-about-name">PRICE</li>
+                            </ul>
+                            <ul class="yahts-list-about">
+                                <li class="yahts-item-about">41m (133ft)</li>
+                                <li class="yahts-item-about">Benetti</li>
+                                <li class="yahts-item-about">2025</li>
+                                <li class="yahts-item-about">10 in 5 cabins</li>
+                                <li class="yahts-item-about">€23,210,000</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="yahts-item yaht-3" id="Yachts">
+                    <img class="yahts-img yahts-3-img"
+                        srcset="/yacht-adventures/assets/yaht-3-2b5ca969.webp , /yacht-adventures/assets/yaht-3@2x-76464bac.webp 2x"
+                        src="/yacht-adventures/assets/yaht-3-2b5ca969.webp" alt="BELLE ANNA" width="299" height="251">
+                    <div class="yahts-card-container">
+                        <div class="yahts-item-text">
+                            <p class="yahts-name">BELLE ANNA</p>
+                            <p class="yahts-class">LUXURY YAHTS</p>
+                        </div>
+                        <div class="yahts-item-about-block">
+                            <ul class="yahts-list-about-name">
+                                <li class="yahts-item-about-name">LENGTH</li>
+                                <li class="yahts-item-about-name">BUILDER</li>
+                                <li class="yahts-item-about-name">BUILT</li>
+                                <li class="yahts-item-about-name">GUESTS</li>
+                                <li class="yahts-item-about-name">PRICE</li>
+                            </ul>
+                            <ul class="yahts-list-about">
+                                <li class="yahts-item-about">50m(155ft)</li>
+                                <li class="yahts-item-about">ISA</li>
+                                <li class="yahts-item-about">2012</li>
+                                <li class="yahts-item-about">12 in 6 cabins</li>
+                                <li class="yahts-item-about">€21,000,000</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="background-lines"> </div>
+
+            <!-- Arrow -->
+            <div class="yacht-arrow">
+                <button type="button" class="arrow-btn">
+                <svg class="arrow-icon-left" width="32" height="18" fill="var(--main-text-color)">
+                            <use href="/yacht-adventures/assets/icons-8fa121da.svg#arrowleft">
+                            </use>
+                        </svg>
+                </button>
+                <button type="button" class="arrow-btn">
+                <svg class="arrow-icon-right" width="32px" height="18px" fill="var(--main-text-color)">
+                            <use href="/yacht-adventures/assets/icons-8fa121da.svg#arrowright">
+                </use>
+                </svg>
+                </button>
+            </div>
+        </div>
+</section>
+
+      <section class="services-block" id="services-section">        
+    <div class="container sb-box">    
+      <div class="sb-spot"></div>    
+      <ul class="sb-content">
+        <li class="sb-item diving">
+          <div class="sb-text-box sb-text-dive">
+          <p class="sb-text">Diving</p>
+          </div>
+        </li>
+
+        <li class="sb-item fishing">
+          <div class="sb-text-box sb-text-fish">
+          <p class="sb-text">Fishing</p>
+          </div>
+        </li> 
+
+        <li class="sb-item sunbath">
+          <div class="sb-text-box sb-text-sun">
+          <p class="sb-text">Sunbathing</p>
+          </div>
+        </li>    
+      </ul>
+    </div>
+  </section>
+      <section class="rent">
+  <div class="container rent-container">
+    <h3 class="rent-title">Rent a yacht now</h3>
+    <div class="rent-pic">
+      <img
+        srcset="data:image/webp;base64,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 1x, /yacht-adventures/assets/yahtrent@2x-1ce9a586.webp 2x"
+        src="data:image/webp;base64,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"
+        width="259"
+        height="187" alt="a yacht in the water"
+      />
+    </div>
+    <div class="container-rent-form">
+      <form class="rent-form">
+        <div>
+          <label for="user-name" class="rent-label"> </label>
+          <input
+            type="text"
+            placeholder="Full Name"
+            name="user-name"
+            id="user-name"
+            class="rent-input"
+            pattern="[A-Za-z]*?\s[A-Za-z]"
+            
+          />
+        </div>
+        <div>
+          <label for="user-email" class="rent-label"> </label>
+          <input
+            type="email"
+            placeholder="Email"
+            name="user-email"
+            id="user-email"
+            class="rent-input"
+            pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+            required
+          />
+        </div>
+        <div>
+          <label for="user-phone" class="rent-label"> </label>
+          <input
+            type="tel"
+            placeholder="Phone number"
+            name="user-phone"
+            id="user-phone"
+            class="rent-input"
+            required
+            pattern="\+?[0-9\s\-\(\)]+"
+          />
+        </div>
+        <div>
+          <label for="user-comment" class="rent-label"> </label>
+          <input
+            type="text"
+            placeholder="Comment"
+            name="user-comment"
+            id="user-comment"
+            class="rent-input"
+            
+            required
+          />
+          <button class="rent-button" type="submit" data-modal-open>
+            <p class="rent-button-p">Send</p>
+            <svg width="38px" height="18px" class="rent-button-icon">
+              <use href="/yacht-adventures/assets/icons-8fa121da.svg#arrowright"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+      
+    </div>
+    
+    
+  </div>
+  <div class="rent-spot"></div>
+</section>
+
+      <section class="review" id="review-section">
+  <div class="container-review container">
+    <h2 class="review-container-title visually-hidden">Reviewer</h2>
+    <div class="container-paragrafs">
+      <h3 class="paragraf-review1">
+        <span class="yacht-adventures">Yacht Adventures</span>
+        take pride in providing the best possible service and experience to our
+        customers
+      </h3>
+      <p class="paragraf-review2">
+        Our customers have enjoyed unforgettable moments on our yachts. Don't
+        just take our word for it - read on to find out what they have to say
+        about their journey with us.
+      </p>
+    </div>
+    <ul class="list-review list">
+      <li class="item-review">
+        <img
+          class="imageReview"
+          src="/yacht-adventures/assets/john@1x-3cee70cb.png"
+          srcset="/yacht-adventures/assets/john@1x-3cee70cb.png 1x, /yacht-adventures/assets/john@2x-07d0530f.png 2x"
+          width="128"
+          height="128"
+          alt="The man with mustashes and beard"
+        />
+        <div class="card-review">
+          <h4 class="reviewer-title">John Wax</h4>
+          <p class="reviewer-paragraf">
+            I rented the Lagoon 620 with my family for a week-long vacation and
+            it was the best decision ever. The yacht was spacious, comfortable,
+            and luxurious, and the crew took care of everything.
+          </p>
+        </div>
+      </li>
+      <li class="item-review">
+        <img
+          class="imageReview"
+          src="/yacht-adventures/assets/victoria@1x-d9a96591.png"
+          srcset="/yacht-adventures/assets/victoria@1x-d9a96591.png 1x, /yacht-adventures/assets/victoria@2x-8552baec.png 2x"
+          width="128"
+          height="128"
+          alt="Young woman wearing in white shirt"
+        />
+        <div class="card-review">
+          <h4 class="reviewer-title">Victoria Romashenko</h4>
+          <p class="reviewer-paragraf">
+            The Sunseeker Manhattan 66 was the perfect choice for our romantic
+            getaway. The yacht was beautifully designed, with all the amenities
+            we needed, and the crew was attentive and friendly.
+          </p>
+        </div>
+      </li>
+      <li class="item-review">
+        <img
+          class="imageReview"
+          src="/yacht-adventures/assets/ihor@1x-b62f6e77.png"
+          srcset="/yacht-adventures/assets/ihor@1x-b62f6e77.png 1x, /yacht-adventures/assets/ihor@2x-54b5b02b.png 2x"
+          width="128"
+          height="128"
+          alt="Young man with glasses"
+        />
+        <div class="card-review">
+          <h4 class="reviewer-title">Ihor Trachuk</h4>
+          <p class="reviewer-paragraf">
+            The Azimut 80 was the most luxurious yacht I've ever been on. The
+            cabins were spacious and elegant, and the outdoor areas were perfect
+            for relaxing and entertaining. Worth every penny!
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+    </main>
+    <footer>
+      <footer class="footer container">
+  <div class="footer-conteiner">
+    <div class="footer-spot"></div>
+    <div class="logo-footer">
+      <a class="link-logo-footer link" href="./index.html" aria-label="logo"
+        ><img
+          class="logo-image"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKXSURBVHgBpZRLbhNBEIar2g4BgRT7BAwnwGs2HisSErBIWCKk2DeIb2BzguQGRmLJImyQBZFpZRBOsuIIJFwgwwoD011U9cMagxU/Mhq731///Vf1AKzxvNe6scw8BWs8pKB9pHVt0by14GChXqnQw0XTVoYPM92REg32F81dCf7hy0kPCBJEIAJIF1mzNPzjOGsiQE9WMJmrJNX9G8OHpzph4msQqOUOlJr8UXpj+AapvkJM/ApFKMJFOkDz7fFxujZ8dJp1GNxG54Y8Fg0RkvwsISq1uxZc7ODD96JMz/aLRD2Didt7g6P5gb0WvgmVAWMSL5ki2/3Ed1HPZf3e7aKxElyffxbFqePgTIaAimA3hgRV7C0NFzvYz/7/I+gCGmpijNTREqTzrJkL3wSlp6pKdvuqDftwTMEF1m10565pL4Tr8+xAfBZwOLqX5zcSNiv1lshepf7da+GfzrIdstB16yIganZtb4sKG5NcI1fK7tB8M5zN+Slc+1t4WDp/LMu7kLU2KHfJGBySlCfk6zWjvhorBUBSRXzHH+saJ++DsGiLV9WZcT+qV6zcWBM8EekuKXkquu88D3QjE0fjrMuucqTtheugyjcpf6G5nEwgf95q5XGyZJH03WIhvwEafArJkK3CQo03rJOBROFG58WTlmfpr7pmf1YGSuFOyesQw+AtUc5JkRdcWgu5sdy2dPXH0HfLkSxIXbBbV5bMj6IoxAaGT/KpnaPxySHD9qOH5UtiOZH5BfmmGKbz69tSp1A3JOMgc8n5XUmmAd1+1OxygF6V1Jcf3s2iv6ZhCKPp7raCR7rclK7+y2fbl/9CQJ9lXZ57EFSDXwhOUSGq+OXMYNWiXE4ip/KKuYuDTdne08eprP8L1aKL/CMTpOcAAAAASUVORK5CYII="
+          alt="yacht"
+        />
+        yacht Adventures</a
+      >
+    </div>
+    <div class="navigation-footer">
+      <ul class="navigation-footer-list list">
+        <li class="navigation-footer-item">
+          <a class="navigation-footer-link" href="#about-section">About</a>
+        </li>
+        <li class="navigation-footer-item">
+          <a class="navigation-footer-link" href="#yachts-section">Yachts</a>
+        </li>
+        <li class="navigation-footer-item">
+          <a class="navigation-footer-link" href="#review-section">Reviews</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-media">
+      <p class="icons-description">We in social</p>
+      <ul class="footer-icon-list list">
+        <li class="list-item">
+          <a
+            class="icon-link"
+            href="https://uk-ua.facebook.com/"
+            target="_blank"
+            aria-label="facebook"
+            ><svg class="chain-icon" width="22" height="22">
+              <use href="/yacht-adventures/assets/icons-8fa121da.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="list-item">
+          <a
+            class="icon-link"
+            href="https://www.instagram.com/"
+            target="_blank"
+            aria-label="instagram"
+            ><svg class="chain-icon" width="22" height="22">
+              <use href="/yacht-adventures/assets/icons-8fa121da.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="list-item">
+          <a
+            class="icon-link"
+            href="https://www.youtube.com/"
+            target="_blank"
+            aria-label="youtube"
+            ><svg class="chain-icon" width="22" height="22">
+              <use href="/yacht-adventures/assets/icons-8fa121da.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="privacy-police">
+      <ul class="privacy-police-list list">
+        <li class="privacy-police-item">
+          <p class="privacy-police-description">2023. Yacht Adventures</p>
+        </li>
+        <li class="privacy-police-item">
+          <p class="privacy-police-description">Privacy Police</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+    </footer>
+      <div class="menu-container js-menu-container" id="mobile-menu">
+  <div class="mob-container">
+    <div class="mob-underline">
+      <a href="" class="header-icon">
+        <img
+          class="logo-icon"
+          srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKESURBVHgBpVRNblMxEJ7xq2grISU9QcMJKHukpEIsYEN7AGh6guYGCSdob5Ad24gFqiAEk7SkHCNHeMuotWeYsd97eUlL81MrVmy/8Tefv/lsgA3aN2sPVokzsEFjhJOetdVlcRuBA8NekvDLZWFrg1+ObJN0QNhZFrsW+Pc/w7ZBs29QlYH6MmlWBu9f2YbI0XFESAzSBZ+o9WRwa20NE9MF5rCh2IRYfzK43zYdQdrP5yRHCI250ev3GxuDD65HTYN4ApFptoqxy9wjHm0ErnKA4XYkyTj/lXVRk5x0/1PYx5nvbHUFsSYMOUsgO4yiwuwMWHnu3MFa4Pbmqs3AjSBFmbW4RZMxxBQcXIntlcHtja3JprYyRQEPjJWljCkeASPr2CSq0e3dl+ZBcIbEQla+AJwXMkvCRdxstLvrmkvB7Xh0DqpzCaRw3kIsqjySUHOygQ+Pgv8cj47kwMWtM6F49xuWMiFGCCZofPnxq/4guNpO3oxzzJwRNuTa4jxpnnWhTlkSmTt3XI7bKkY7UGPkrwimImWrRe+BFqkqBYvzkLiUJ6tH8BOxDj7JanFyHIyHLQUxTJOwksAEXEg7kYTp4avDNA++FBdNp5A+k5rcEh2IbhV5yKr+zu/Jq1PxzLW7qTs9PX4XsFDkqNJ20hUCc9c4t2HUk1MvXQRIiSAVkNR7Sj3AhMT3zGbinKwhp0rMOSfg07S4HIPr4QUmeFbyNed+1plnvT8MkgTkt/A/WyfdJfvo1r8oCvrmdb0l65/zCxMULtyCmqUsdjGIxcbiLkQTYEelWXiMxDV/h2fy/SJ4OF71wFhEYmGHXll6Cjc1nkRPxWFM8S37/fH920PF+ge5cW0AbYYzqgAAAABJRU5ErkJggg== 1x, data:image/png;base64,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 2x"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKESURBVHgBpVRNblMxEJ7xq2grISU9QcMJKHukpEIsYEN7AGh6guYGCSdob5Ad24gFqiAEk7SkHCNHeMuotWeYsd97eUlL81MrVmy/8Tefv/lsgA3aN2sPVokzsEFjhJOetdVlcRuBA8NekvDLZWFrg1+ObJN0QNhZFrsW+Pc/w7ZBs29QlYH6MmlWBu9f2YbI0XFESAzSBZ+o9WRwa20NE9MF5rCh2IRYfzK43zYdQdrP5yRHCI250ev3GxuDD65HTYN4ApFptoqxy9wjHm0ErnKA4XYkyTj/lXVRk5x0/1PYx5nvbHUFsSYMOUsgO4yiwuwMWHnu3MFa4Pbmqs3AjSBFmbW4RZMxxBQcXIntlcHtja3JprYyRQEPjJWljCkeASPr2CSq0e3dl+ZBcIbEQla+AJwXMkvCRdxstLvrmkvB7Xh0DqpzCaRw3kIsqjySUHOygQ+Pgv8cj47kwMWtM6F49xuWMiFGCCZofPnxq/4guNpO3oxzzJwRNuTa4jxpnnWhTlkSmTt3XI7bKkY7UGPkrwimImWrRe+BFqkqBYvzkLiUJ6tH8BOxDj7JanFyHIyHLQUxTJOwksAEXEg7kYTp4avDNA++FBdNp5A+k5rcEh2IbhV5yKr+zu/Jq1PxzLW7qTs9PX4XsFDkqNJ20hUCc9c4t2HUk1MvXQRIiSAVkNR7Sj3AhMT3zGbinKwhp0rMOSfg07S4HIPr4QUmeFbyNed+1plnvT8MkgTkt/A/WyfdJfvo1r8oCvrmdb0l65/zCxMULtyCmqUsdjGIxcbiLkQTYEelWXiMxDV/h2fy/SJ4OF71wFhEYmGHXll6Cjc1nkRPxWFM8S37/fH920PF+ge5cW0AbYYzqgAAAABJRU5ErkJggg=="
+          alt="icon logo little yacht"
+          width="18"
+          height="18"
+        />
+        <span class="logo-name">Yachts Adventures</span>
+      </a>
+      <button class="js-close-menu x-close">
+        <svg class="x-close-icon" width="24" height="24">
+          <use href="/yacht-adventures/assets/icons-8fa121da.svg#close"></use>
+        </svg>
+      </button>
+    </div>
+    <ul class="mobile-menu">
+      <li class="mobile-menu-element">
+        <a href="#about-section" class="link mob-menu-link">About</a>
+      </li>
+      <li class="mobile-menu-element">
+        <a href="#yachts-section" class="link mob-menu-link">Yachts</a>
+      </li>
+      <li class="mobile-menu-element">
+        <a href="#review-section" class="link mob-menu-link">Reviews</a>
+      </li>
+    </ul>
+  </div>
+  <div class="gradient-circle1"></div>
+  <div class="gradient-circle2"></div>
+</div>
+
+      <div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+      <button type="button" data-modal-close class="close-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M15 5L5 15" stroke="#F6F5EF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 5L15 15" stroke="#F6F5EF" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+      </button>
+      <img class="rent-modal-pic" rcset="/img/rent/rentmodal@1x.webp 1x, /img/rent/rentmodal@2x.webp 2x"
+      src="data:image/webp;base64,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" />
+      <div class="rent-modal-spot"></div>
+      <div class="modal-thanks">
+        <h4 class="modal-h">Thank you</h4>
+        <p class="modal-p">Thank you for choosing Yacht Adventures, your booking details have been received and our team will be in touch shortly to confirm your reservation and provide any additional information or assistance you may need.</p>
+      </div>
+    </div>
+  </div>
+    
+  </body>
+</html>
