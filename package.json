@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/html-css_92_-Debeluk/",
+    "build": "vite build --base=/yacht-adventures/",
     "preview": "vite preview"
   },
   "devDependencies": {
