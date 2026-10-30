@@ -36,32 +36,6 @@ This is an educational frontend demonstration. The presence of a form does not i
 - Git and GitHub
 - GitHub Actions and GitHub Pages
 
-## Run locally
-
-Install Node.js and npm, then run:
-
-```bash
-git clone https://github.com/Valeriy-Zinkovskyi/yacht-adventures.git
-cd yacht-adventures
-npm install
-npm run dev
-```
-
-Open the local URL printed by Vite in the terminal.
-
-## Build and preview
-
-```bash
-npm run build
-npm run preview
-```
-
-The production build is generated in `dist/`. The build command uses the base path `/yacht-adventures/` for this repository's GitHub Pages site. Use the preview URL printed by Vite, including that base path when needed.
-
-## Deployment
-
-Pushes to `main` trigger the GitHub Actions workflow in `.github/workflows/deploy.yml`. It builds the project and publishes the output to the `gh-pages` branch, which GitHub Pages serves.
-
 ## Team and attribution
 
 Originally developed by **GoIT group N-18** under the project name **DreamSails**.
